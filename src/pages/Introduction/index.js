@@ -1,33 +1,34 @@
-import React from "react";
-import styled from "styled-components";
-import { themeGet } from '../../util/style';
+import React from 'react'
+import styled from 'styled-components'
+import { themePx, themeGet } from '../../util/style'
+import HeadLine from '../../components/HeadLine'
+import Button from '../../components/Button'
 
 const Hero = styled.div`
-    display:flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    padding: 3em;
-`;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: ${themePx('space.3')};
+  width: ${themePx('space.8')};
+  background: #FAFAFA;
+`
 
 const Description = styled.div`
-    margin: 2em;
-    background: #ccc;
-    color: ${themeGet('colors.text')};
-`;
+  margin: ${themePx('space.3')};
+  background: #ccc;
+  flex: display;
+  flex: 1;
+  color: ${themeGet('colors.text')};
+  background: ${themeGet('colors.gray.9')};
+  padding: ${themePx('space.3')};
+`
 
 
-const HeadLine = styled.h1`
-  color: ${themeGet('colors.blue')};
-`;
 
-const Introduction = props => (
-    <Hero>
-      <HeadLine>{props.headline}</HeadLine>
-      <Description>{props.description}</Description>
-    </Hero>
-  );
-
-
-export default () => (
-  <Introduction headline="Hallo Welt" description="Hallooooo" />
-);
+export default (props) => (
+        <Hero>
+          <HeadLine>{props.headline}</HeadLine>
+          <Description>{props.description}</Description>
+          <Button href="/page-2">Next</Button>
+        </Hero>
+      )

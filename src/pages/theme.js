@@ -6,6 +6,7 @@ const colors = {
   text: '#024',
   white: '#FFFFFF',
   blue: '#3A70F6',
+  lightblue: '#03A9F4',
   green: '#1FA164',
   // nested objects work as well
   dark: {
@@ -17,12 +18,12 @@ const colors = {
     '#4F4F4F',
     '#828282',
     '#BDBDBD',
+    '#CCCCCC',
     '#E0E0E0',
-    '#F2F2F2',
+    '#EDEDED',
     '#F7F8FA',
     '#F5F5F5',
-    '#CCCCCC',
-    '#EDEDED'
+    '#F2F2F2',
   ]
 };
 
