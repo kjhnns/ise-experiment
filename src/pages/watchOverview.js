@@ -7,7 +7,7 @@ import WatchOverview from "./WatchOverview";
 
 export default () => (
   <ThemeProvider theme={theme}>
-    <WatchOverview  />
+    <WatchOverview reciprocity={true} socialproof={true} />
   </ThemeProvider>
 );
 
