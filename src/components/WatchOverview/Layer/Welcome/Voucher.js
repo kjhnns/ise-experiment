@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import giftImage from './gift.png';
+
 
 const Voucher = styled.div`
 border: 4px solid #BE8F1F;
@@ -58,7 +60,7 @@ height: 111px;
 
 export default (props) => (
     <Voucher>
-        <GiftImage src={"/assets/gift.png"} />
+        <GiftImage src={giftImage} />
         <Info>
             <Title>5% voucher code</Title>
             <Code>ILOVEWATCHES</Code>

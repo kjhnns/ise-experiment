@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { themePx, themeGet } from '../../util/style'
+import {withPrefix} from 'gatsby-link';
 
 const Wrapper = styled.div`
   display: flex;
@@ -83,7 +84,7 @@ class Product extends React.Component {
 
     return (
       <Wrapper>
-        <Image src={'/products/watch' + info.id + '.jpg'} />
+        <Image src={withPrefix('/products/watch' + info.id + '.jpg')} />
         <Title>{info.name}</Title>
         <Price>{formatPrice(info.price)} €</Price>
       </Wrapper>
