@@ -84,7 +84,7 @@ class Product extends React.Component {
 
     return (
       <Wrapper>
-        <Image src={withPrefix('/products/watch' + info.id + '.jpg')} />
+        <Image src={'/ise-experiment/products/watch' + info.id + '.jpg'} />
         <Title>{info.name}</Title>
         <Price>{formatPrice(info.price)} €</Price>
       </Wrapper>

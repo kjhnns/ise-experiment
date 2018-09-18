@@ -37,7 +37,7 @@ class WatchOverview extends React.Component {
     render() {
       return (
         <Body>
-            {this.state.showLayer && <Layer />}
+            {this.state.showLayer && <Layer onCloseHandler={() => this.setState({showLayer:false}) } />}
             <Wrapper blur={this.state.showLayer ? '5px': false}>
             {products.map(product => (
                 product.id === 94 ?
