@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
-import theme from './theme'
-import WatchOverview from "./WatchOverview";
+import theme from '../layouts/theme'
+import WatchOverview from "../components/WatchOverview";
 
 
 

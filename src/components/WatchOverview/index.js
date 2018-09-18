@@ -49,8 +49,8 @@ class WatchOverview extends React.Component {
                     }
                 }} />
             ))}
-            {loadingDummies.map(a => (
-                <LoadingProduct />
+            {loadingDummies.map((a,i) => (
+                <LoadingProduct key={i} />
             ))}
             </Wrapper>
         </Body>

@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
-import theme from './theme'
-import Introduction from "./Introduction";
+import theme from '../layouts/theme'
+import Introduction from "../components/Introduction";
 
 
 
