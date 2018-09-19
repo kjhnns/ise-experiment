@@ -27,7 +27,7 @@ const Button = styled.a`
   text-decoration: none;
   width: 229px;
   height: 49px;
-  background: rgba(232, 195, 72, 0.86);
+  background: #3F3F3F;
   box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
   font-family: Roboto;
   font-style: normal;
@@ -35,7 +35,7 @@ const Button = styled.a`
   line-height: normal;
   font-size: 18px;
   text-align: center;
-  color: #383838;
+  color: #fff;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -44,7 +44,7 @@ const Button = styled.a`
   cursor: pointer;
 
   &:active {
-    background: rgba(255, 214, 79, 0.86);
+    background: #7D7D7D;
     box-shadow: 0px 5px 39px rgba(0, 0, 0, 0.25);
   }
 
@@ -58,6 +58,6 @@ export default props => (
   <Wrapper>
     <Headline>We like to welcome you</Headline>
     <Voucher />
-    <Button onClick={props.onClickHandler}>Next</Button>
+    <Button onClick={props.onClickHandler}>Okay</Button>
   </Wrapper>
 )

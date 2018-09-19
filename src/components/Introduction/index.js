@@ -23,32 +23,34 @@ const Description = styled.div`
   padding: ${themePx('space.3')};
 `
 
-// const Button = styled(Link)`
-// display: ${props => (props.block ? 'flex' : 'inline-flex')};
-// width: ${props => props.block && '100%'};
-// cursor: pointer;
-// justify-content: center;
-// align-items: center;
-// height: ${props => (props.height ? props.height : themePx('space.4'))};
-// font-size: 13px;
-// font-weight: 600;
-// letter-spacing: 0.2px;
-// border-radius: ${themePx('radii.2')};
-// text-decoration: none;
-// background: ${colors.primary};
-// color: ${themeGet('colors.white')};
-// box-shadow: 0px 4px 8px rgba(47, 39, 60, 0.2);
+const Button = Link;
 
-// &:hover {
-//   background: ${colors.primaryLighter};
-// }
-// `;
+const NextButton = styled(Button)`
+display: ${props => (props.block ? 'flex' : 'inline-flex')};
+width: ${props => props.block && '100%'};
+cursor: pointer;
+justify-content: center;
+align-items: center;
+height: ${props => (props.height ? props.height : themePx('space.4'))};
+font-size: 13px;
+font-weight: 600;
+letter-spacing: 0.2px;
+border-radius: ${themePx('radii.2')};
+text-decoration: none;
+background: #f00;
+color: ${themeGet('colors.white')};
+box-shadow: 0px 4px 8px rgba(47, 39, 60, 0.2);
+
+&:hover {
+  background: #ff0;
+}
+`;
 
 
 export default (props) => (
         <Hero>
           <HeadLine>{props.headline}</HeadLine>
           <Description>{props.description}</Description>
-          <Link to="/watchOverview/">Next</Link>
+          <Link to="/watch24/">Next</Link>
         </Hero>
       )

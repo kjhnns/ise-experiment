@@ -7,7 +7,8 @@ import WatchOverview from "../components/WatchOverview";
 
 export default () => (
   <ThemeProvider theme={theme}>
-    <WatchOverview reciprocity={true} socialproof={true} />
+    <WatchOverview reciprocity={true}
+                    socialProof={true} />
   </ThemeProvider>
 );
 

@@ -51,7 +51,7 @@ color: #727272;
 const Info = styled.div`
 font-family: Roboto;
 font-style: normal;
-font-weight: normal;
+font-weight: 300;
 line-height: 34px;
 font-size: 24px;
 color: #515151;

@@ -80,10 +80,10 @@ class Product extends React.Component {
   }
 
   render() {
-    const { info } = this.props
+    const { info, onClickHandler } = this.props
 
     return (
-      <Wrapper>
+      <Wrapper onClick={onClickHandler}>
         <Image src={'/ise-experiment/products/watch' + info.id + '.jpg'} />
         <Title>{info.name}</Title>
         <Price>{formatPrice(info.price)} €</Price>

@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { themePx, themeGet } from '../../util/style'
+import { themePx } from '../../util/style'
 
 const placeHolderShimmer = keyframes`
   0% {

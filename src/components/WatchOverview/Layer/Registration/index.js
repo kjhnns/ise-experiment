@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import SocialProof from './SocialProof';
+import SocialProof from './SocialProof'
 import closeImg from './close.svg'
 
 const Wrapper = styled.div`
@@ -23,16 +23,16 @@ const Headline = styled.h1`
 `
 
 const Form = styled.div`
-margin-top: 20px;
-display: flex;
-flex-direction: column;
-flex-wrap: nowrap;
-`;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+`
 
 const Button = styled.a`
   width: 306px;
   height: 44px;
-  background: #be8f1f;
+  background: #3f3f3f;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -50,8 +50,8 @@ const Button = styled.a`
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  &:active {
-    background: rgba(255, 214, 79, 0.86);
+  &:hover {
+    background: #7d7d7d;
   }
 `
 
@@ -82,25 +82,54 @@ const EmailTextInput = styled.input`
 `
 
 const CloseWrapper = styled.div`
-width: 100%;
-text-align: right;
-`;
+  width: 100%;
+  text-align: right;
+`
 const Close = styled.img`
-margin-right: 30px;
-margin-top: 20px;
-cursor:pointer;
+  margin-right: 30px;
+  margin-top: 20px;
+  cursor: pointer;
+`
 
-`;
+class Registration extends React.Component {
+  state = { emailValue: '' };
+
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
 
-export default props => (
-  <Wrapper>
-    <CloseWrapper><Close src={closeImg} onClick={props.onCloseHandler} /></CloseWrapper>
-    <Headline>Create your user account  </Headline>
-      <SocialProof />
-    <Form>
-      <EmailTextInput placeholder="Your e-mail address" />
-      <Button onClick={props.onSubmitHandler}>Register</Button>
-    </Form>
-  </Wrapper>
-)
+  handleChange(event) {
+    this.setState({ emailValue: event.target.value });
+  }
+
+  handleSubmit() {
+    const { onSubmitHandler } = this.props;
+    onSubmitHandler(this.state.emailValue);
+  }
+
+  render() {
+    const { onCloseHandler, socialProof } = this.props
+
+    return (
+      <Wrapper>
+        <CloseWrapper>
+          <Close src={closeImg} onClick={onCloseHandler} />
+        </CloseWrapper>
+        <Headline>Create a free user account</Headline>
+        {socialProof && <SocialProof />}
+        <Form>
+          <EmailTextInput
+            placeholder="Your e-mail address"
+            onChange={this.handleChange}
+          />
+          <Button onClick={this.handleSubmit}>Register</Button>
+        </Form>
+      </Wrapper>
+    )
+  }
+}
+
+export default Registration;

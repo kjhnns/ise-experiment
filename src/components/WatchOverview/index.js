@@ -16,8 +16,8 @@ const Body = styled.div`
   padding: 0;
   margin: 0;
   justify-content: center;
-  background: #f2f4f5;
 `
+
 
 const Wrapper = styled.div`
   display: flex;
@@ -30,24 +30,45 @@ const Wrapper = styled.div`
   filter: ${props => (props.blur ? 'blur('+props.blur+')' : '0')};
 `
 
+const HeaderBar = styled.div`
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 50px;
+    background: #000;
+    z-index: 10;
+    color: #fff;
+`;
+
 var loadingDummies = Array.apply(null, { length: 5 })
 
 class WatchOverview extends React.Component {
     state = { showLayer: false }
+
+    showLayer = () => {
+        if(!this.state.showLayer) {
+            this.setState({showLayer:true});
+        }
+    }
+
     render() {
+      const {reciprocity, socialProof} = this.props;
       return (
         <Body>
-            {this.state.showLayer && <Layer onCloseHandler={() => this.setState({showLayer:false}) } />}
+            {this.state.showLayer && 
+                <Layer 
+                    onCloseHandler={() => this.setState({showLayer:false}) } 
+                    reciprocity={reciprocity}
+                    socialProof={socialProof}
+                    />}
             <Wrapper blur={this.state.showLayer ? '5px': false}>
+            <HeaderBar>Watch24</HeaderBar>
             {products.map(product => (
                 product.id === 94 ?
-                <Product key={product.id} info={product} />
+                <Product key={product.id} info={product} onClickHandler={this.showLayer} />
                 :
-                <Product key={product.id} info={product} onInViewport={() => {
-                    if(!this.state.showLayer) {
-                        this.setState({showLayer:true})
-                    }
-                }} />
+                <Product key={product.id} info={product} onInViewport={this.showLayer} onClickHandler={this.showLayer} />
             ))}
             {loadingDummies.map((a,i) => (
                 <LoadingProduct key={i} />
@@ -58,5 +79,5 @@ class WatchOverview extends React.Component {
     }
   }
   
-  export default WatchOverview
+  export default WatchOverview;
   
