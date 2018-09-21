@@ -57,18 +57,14 @@ class LayerExport extends React.Component {
 
   submitForm(textInput) {
     const { reciprocity, socialProof } = this.props;
-    console.log({'textInput':textInput,'reciprocity':reciprocity, 'socialProof':socialProof});
-
     this.setState({ showWelcome: false, showRegistration: false, showRedirect: true })
-    // window.location.href="http://google.de";
+    window.location.href=`http://survey.ise.tu-darmstadt.de/watch24/?act=Xjk7KN2cfgG6E5QVnXxDMxea&d=1&m=${textInput}&ir=${reciprocity}&is=${socialProof}&c=0`;
   }
 
   closeForm() {
     const { reciprocity, socialProof } = this.props;
-    console.log({'textInput':0,'reciprocity':reciprocity, 'socialProof':socialProof});
-
     this.setState({ showWelcome: false, showRegistration: false, showRedirect: true })
-    // window.location.href="http://amazon.de";
+    window.location.href=`http://survey.ise.tu-darmstadt.de/watch24/?act=Xjk7KN2cfgG6E5QVnXxDMxea&d=0&m=&ir=${reciprocity}&is=${socialProof}&c=1`;
   }
 
 
