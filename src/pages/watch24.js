@@ -7,8 +7,7 @@ import Watch24 from "../components/Watch24";
 
 export default () => (
   <ThemeProvider theme={theme}>
-    <Watch24 reciprocity={true}
-                    socialProof={true} />
+    <Watch24  />
   </ThemeProvider>
 );
 

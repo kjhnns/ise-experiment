@@ -69,7 +69,17 @@ color: #fefefe;
 var loadingDummies = Array.apply(null, { length: 5 })
 
 class WatchOverview extends React.Component {
-    state = { showLayer: false }
+
+    constructor() {
+        super();
+        const reciprocity = Math.round(Math.random());
+        const socialProof = Math.round(Math.random());
+
+        console.log('reciprocity:',reciprocity);
+        console.log('socialProof:',socialProof);
+        this.state = { showLayer: false, reciprocity: reciprocity, socialProof: socialProof };
+
+    }
 
     showLayer = () => {
         if(!this.state.showLayer) {
@@ -78,14 +88,13 @@ class WatchOverview extends React.Component {
     }
 
     render() {
-      const {reciprocity, socialProof} = this.props;
       return (
         <Wrapper>
             {this.state.showLayer && 
                 <Layer 
                     onCloseHandler={() => this.setState({showLayer:false}) } 
-                    reciprocity={reciprocity}
-                    socialProof={socialProof}
+                    reciprocity={this.state.reciprocity}
+                    socialProof={this.state.socialProof}
                     />}
             <HeaderBar blur={this.state.showLayer}><Logo>WATCH24</Logo></HeaderBar>
             <ProductList blur={this.state.showLayer}>
