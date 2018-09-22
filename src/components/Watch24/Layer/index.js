@@ -57,14 +57,22 @@ class LayerExport extends React.Component {
 
   submitForm(textInput) {
     const { reciprocity, socialProof } = this.props;
-    this.setState({ showWelcome: false, showRegistration: false, showRedirect: true })
-    window.location.href=`http://survey.ise.tu-darmstadt.de/watch24/?act=Xjk7KN2cfgG6E5QVnXxDMxea&d=1&m=${textInput}&ir=${reciprocity}&is=${socialProof}&c=0`;
+    this.setState({ showWelcome: false, showRegistration: false, showRedirect: true });
+    
+    const uMail = encodeURI(textInput);
+    const uReciprocity = reciprocity?1:0;
+    const uSocialProof = reciprocity?1:0;
+    window.location.href=`http://survey.ise.tu-darmstadt.de/watch24/?act=Xjk7KN2cfgG6E5QVnXxDMxea&d=1&m=${uMail}&ir=${uReciprocity}&is=${uSocialProof}`;
   }
 
   closeForm() {
     const { reciprocity, socialProof } = this.props;
-    this.setState({ showWelcome: false, showRegistration: false, showRedirect: true })
-    window.location.href=`http://survey.ise.tu-darmstadt.de/watch24/?act=Xjk7KN2cfgG6E5QVnXxDMxea&d=0&m=&ir=${reciprocity}&is=${socialProof}&c=1`;
+    this.setState({ showWelcome: false, showRegistration: false, showRedirect: true });
+
+    const uMail = encodeURI(textInput);
+    const uReciprocity = reciprocity?1:0;
+    const uSocialProof = reciprocity?1:0;
+    window.location.href=`http://survey.ise.tu-darmstadt.de/watch24/?act=Xjk7KN2cfgG6E5QVnXxDMxea&d=0&m=${uMail}&ir=${uReciprocity}&is=${uSocialProof}`;
   }
 
 
