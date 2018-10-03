@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
+  padding-top: 30px;
 `
 
 const Headline = styled.h1`
@@ -18,7 +19,6 @@ const Headline = styled.h1`
   line-height: 40px;
   font-size: 28px;
   text-align: center;
-
   color: #3f3f3f;
 `
 
@@ -27,9 +27,10 @@ const Form = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  align-items: center;
 `
 
-const Button = styled.a`
+const ButtonRegister = styled.a`
   width: 306px;
   height: 44px;
   background: #3f3f3f;
@@ -55,77 +56,42 @@ const Button = styled.a`
   }
 `
 
-const EmailTextInput = styled.input`
-  width: 306px;
-  height: 44px;
-  margin-bottom: 10px;
+const ButtonClose = styled.a`
+width: auto;
+background: none;
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+line-height: normal;
+text-align: center;
+cursor: pointer;
+color: #3f3f3f;
+margin: 18px 0;
+font-size: 16px;
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+justify-content: center;
+align-items: center;
+padding: 4px;
+&:hover {
+  color: #7d7d7d;
+}
+`;
 
-  background: #ffffff;
-  border: 1px solid #d3d3d3;
-  box-sizing: border-box;
 
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 26px;
-  font-size: 18px;
-  text-align: center;
-  &::placeholder {
-    color: #a6a6a6;
-  }
-
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-`
-
-const CloseWrapper = styled.div`
-  width: 100%;
-  text-align: right;
-`
-const Close = styled.img`
-  margin-right: 30px;
-  margin-top: 20px;
-  cursor: pointer;
-`
 
 class Registration extends React.Component {
-  state = { emailValue: '' };
-
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-
-  handleChange(event) {
-    this.setState({ emailValue: event.target.value });
-  }
-
-  handleSubmit() {
-    const { onSubmitHandler } = this.props;
-    onSubmitHandler(this.state.emailValue);
-  }
-
   render() {
-    const { onCloseHandler, socialProof } = this.props
+    const { onCloseHandler, onSubmitHandler, socialProof } = this.props
 
     return (
       <Wrapper>
-        <CloseWrapper>
-          <Close src={closeImg} onClick={onCloseHandler} />
-        </CloseWrapper>
         <Headline>Create a free user account</Headline>
         {socialProof && <SocialProof />}
         <Form>
-          <EmailTextInput
-            placeholder="Your e-mail address"
-            onChange={this.handleChange}
-          />
-          <Button onClick={this.handleSubmit}>Register</Button>
+          <ButtonRegister onClick={onSubmitHandler}>Register</ButtonRegister>
+          <ButtonClose onClick={onCloseHandler}>Do Not Register</ButtonClose>
         </Form>
       </Wrapper>
     )

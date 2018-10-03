@@ -6,9 +6,9 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  height: 80%;
+  height: 90%;
   padding-top: 20px;
 `
 
@@ -22,6 +22,7 @@ const Headline = styled.h1`
 
   color: #3f3f3f;
 `
+
 
 const Button = styled.a`
   text-decoration: none;
@@ -54,10 +55,10 @@ const Button = styled.a`
 `
 
 
-export default props => (
+export default ({onClickHandler, reciprocity}) => (
   <Wrapper>
     <Headline>We like to welcome you</Headline>
-    <Voucher />
-    <Button onClick={props.onClickHandler}>Okay</Button>
+    {reciprocity && <Voucher />}
+    <Button onClick={onClickHandler}>Okay</Button>
   </Wrapper>
 )

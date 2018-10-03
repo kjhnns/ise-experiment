@@ -36,7 +36,7 @@ color: #3f3f3f;
 
 
 class LayerExport extends React.Component {
-  state = { showWelcome: false, showRegistration: false, showRedirect: false, initialized: false };
+  state = { showWelcome: true, showRegistration: false, showRedirect: false };
 
   constructor(props) {
     super(props);
@@ -44,25 +44,15 @@ class LayerExport extends React.Component {
     this.closeForm = this.closeForm.bind(this);
   }
 
-  initialize = (reciprocity) => {
-    return { showWelcome: reciprocity, showRegistration: !reciprocity, showRedirect: false, initialized: true };
-  }
 
-  componentDidMount() {
-    const { reciprocity } = this.props;
-    if(!this.state.initialized) {
-      this.setState(this.initialize(reciprocity));
-    }
-  }
 
-  submitForm(textInput) {
+  submitForm() {
     const { reciprocity, socialProof } = this.props;
     this.setState({ showWelcome: false, showRegistration: false, showRedirect: true });
 
-    const uMail = encodeURI(textInput);
     const uReciprocity = reciprocity?1:0;
     const uSocialProof = socialProof?1:0;
-    window.location.href=`http://survey.ise.tu-darmstadt.de/watch24/?act=Xjk7KN2cfgG6E5QVnXxDMxea&d=1&m=${uMail}&ir=${uReciprocity}&is=${uSocialProof}`;
+    window.location.href=`http://survey.ise.tu-darmstadt.de/watch24/?act=Xjk7KN2cfgG6E5QVnXxDMxea&d=1&m=&ir=${uReciprocity}&is=${uSocialProof}`;
   }
 
   closeForm() {
@@ -76,12 +66,13 @@ class LayerExport extends React.Component {
 
 
   render() {  
-    const { socialProof } = this.props;
+    const { socialProof,reciprocity } = this.props;
     return (
       <Layer>
         <Hero>
           {this.state.showWelcome && (
             <Welcome
+              reciprocity={reciprocity}
               onClickHandler={() => {
                 this.setState({ showWelcome: false, showRegistration: true, showRedirect: false })
               }}

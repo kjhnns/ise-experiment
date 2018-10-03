@@ -75,8 +75,6 @@ class WatchOverview extends React.Component {
         const reciprocity = (Math.round(Math.random()) == 1);
         const socialProof = (Math.round(Math.random()) == 1);
 
-        console.log('reciprocity:',reciprocity);
-        console.log('socialProof:',socialProof);
         this.state = { showLayer: false, reciprocity: reciprocity, socialProof: socialProof };
 
     }
