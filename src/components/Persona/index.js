@@ -40,8 +40,10 @@ export default () => (
         <i>In the following you find a description of Alex. Please read it carefully and put yourself in the shoes of Alex. </i>
       </Paragraph>
       <Paragraph>
-        Alex is interested in buying a luxury watch. 
-        In the following Alex visits WATCH24 (an e-commerce platform that offers luxury watches) for the first time. 
+      Alex is interested in buying a luxury watch without preferring any model or brand. 
+      Luxury watches can be bought offline at jewelries or online on designated e-commerce websites.
+      In the following Alex visits WATCH24 (an e-commerce platform that offers luxury watches) for the first time.
+      Alex wants to get a first idea about the watches that WATCH24 offers and wants to browse the online store.. 
       </Paragraph>
     </Description>
     <Link to="/watch24/">Next</Link>
