@@ -32,7 +32,7 @@ color: #3F3F3F;
 `;
 
 const Code = styled.div`
-font-family: Open Sans;
+font-family: 'Courier New';
 font-style: normal;
 font-weight: 300;
 line-height: 33px;

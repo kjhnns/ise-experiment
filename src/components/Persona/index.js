@@ -43,7 +43,7 @@ export default () => (
       Alex is interested in buying a luxury watch without preferring any model or brand. 
       Luxury watches can be bought offline at jewelries or online on designated e-commerce websites.
       In the following Alex visits WATCH24 (an e-commerce platform that offers luxury watches) for the first time.
-      Alex wants to get a first idea about the watches that WATCH24 offers and wants to browse the online store.. 
+      Alex wants to get a first idea about the watches that WATCH24 offers and wants to browse the online store.
       </Paragraph>
     </Description>
     <Link to="/watch24/">Next</Link>
