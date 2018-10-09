@@ -52,7 +52,7 @@ class LayerExport extends React.Component {
 
     const uReciprocity = reciprocity?1:0;
     const uSocialProof = socialProof?1:0;
-    window.location.href=`http://survey.ise.tu-darmstadt.de/watch24/?act=nozovoIv5yBa1NMeMMKC1S6R&d=1&m=&ir=${uReciprocity}&is=${uSocialProof}`;
+    window.location.href=`http://survey.ise.tu-darmstadt.de/watch24/?d=1&m=&ir=${uReciprocity}&is=${uSocialProof}`;
   }
 
   closeForm() {
@@ -61,7 +61,7 @@ class LayerExport extends React.Component {
 
     const uReciprocity = reciprocity?1:0;
     const uSocialProof = socialProof?1:0;
-    window.location.href=`http://survey.ise.tu-darmstadt.de/watch24/?act=nozovoIv5yBa1NMeMMKC1S6R&d=0&m=&ir=${uReciprocity}&is=${uSocialProof}`;
+    window.location.href=`http://survey.ise.tu-darmstadt.de/watch24/?d=0&m=&ir=${uReciprocity}&is=${uSocialProof}`;
   }
 
 

@@ -61,7 +61,7 @@ margin-left: 15px;
 export default (props) => (
     <SocialProof>
     <Circle>
-        <Proof>4 million</Proof>
+        <Proof>15,000</Proof>
         <Mute>visitors</Mute>
     </Circle>
     <Info>registered a new account<br/><u>this month</u></Info>
